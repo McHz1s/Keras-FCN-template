@@ -32,5 +32,6 @@ In this part, we provide Carvana Image Masking Challenge(https://www.kaggle.com/
 * CarvanaDataset.py: write a class CarvanaDataset extends class dataset from dataset.py to generate data for our model.
 * prediciton.py: run model.predict and get the result.
 * train.py: run model.train and get the trained network.
+
 ##Requirements
 Python 3.4, TensorFlow 1.4.0, Keras 2.1.6 and other common packages listed in requirements.txt.
