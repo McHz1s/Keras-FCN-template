@@ -1,9 +1,22 @@
 # Keras-FCN-template
 A FCN template(container) to quickly train/predict a specific FCN from a dataset.
 ## File introdutction
-### Director tree:
+### Director tree
 Architecture inspired by https://github.com/matterport/Mask_RCNN.
-
+├── Apply
+│   └── Carvana
+│       ├── code
+│       │   ├── CarvanaConfig.py
+│       │   ├── CarvanaDataset.py
+│       │   ├── mobilenetv2_unet.py
+│       │   ├── prediciton.py
+│       │   └── train.py
+│       └── sample
+└── BaseCode
+    ├── config.py
+    ├── dataset.py
+    ├── losses.py
+    └── model.py
     
 ###1. BaseCode:basic classes and functions
 * config.py: creat a base class to set hyperparameter and director.
