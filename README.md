@@ -23,7 +23,7 @@ Architecture inspired by https://github.com/matterport/Mask_RCNN.
 * config.py: creat a base class to set hyperparameter and director.
 * dataset.py: create a class to conduct data preprocessing and provide it to model.
 * losses.py: som basic loss function, such as dice loss.
-* model.py: create a class(FCNModel) getting data, config and lossfunction. from three above python file. The FCNmodel dosen't implement a concrete fully convolution network, but obtain it when we rewrite config and feed a FCN to it
+* model.py: create a class(FCNModel) getting data, config and lossfunction from three above python file. The FCNmodel dosen't implement a concrete fully convolution network, but obtain it when we rewrite config and feed a FCN to it
 ### 2. Apply: use BaseCode to accomplish a specific task
 In this part, we provide Carvana Image Masking Challenge(https://www.kaggle.com/c/carvana-image-masking-challenge)
  as a sample.
