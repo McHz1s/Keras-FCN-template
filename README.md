@@ -34,4 +34,4 @@ In this part, we provide Carvana Image Masking Challenge(https://www.kaggle.com/
 * train.py: run model.train and get the trained network.
 
 ## Requirements
-Python 3.4, TensorFlow 1.4.0, Keras 2.1.6 and other common packages listed in my_py_envn.txt .txt.
+Python 3.5, TensorFlow 1.4.0, Keras 2.1.6 and other common packages listed in my_py_envn.txt .txt.
