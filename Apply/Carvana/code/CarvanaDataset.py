@@ -9,13 +9,13 @@ class CarvanaDataset(DataSet):
     def __init__(self, config, mode):
         super(CarvanaDataset, self).__init__(config=config, mode=mode)
         if mode == "training":
-            df_train = pd.read_csv(os.path.expanduser('~/图片/cavaran/train_masks.csv'))
+            df_train = pd.read_csv('../cavaranset/train_masks.csv')
             ids_train = df_train['img'].map(lambda s: s.split('.')[0])
             self.ids_train, self.ids_valid = train_test_split(ids_train, test_size=0.1)
             self.step_per_epoch = np.ceil(float(len(self.ids_train)) / float(config.batch_size))
             self.validation_steps = np.ceil(float(len(self.ids_valid)) / float(config.batch_size))
         else:
-            self.df_test = pd.read_csv(os.path.expanduser('~/图片/cavaran/sample_submission.csv'))
+            self.df_test = pd.read_csv(os.path.expanduser('../cavaranset/sample_submission.csv'))
             self.ids_test = self.df_test['img'].map(lambda s: s.split('.')[0])
             self.names = []
             self.rles = []
@@ -35,13 +35,11 @@ class CarvanaDataset(DataSet):
                 ids_train_batch = df.iloc[shuffle_indices[start:end]]
 
                 for _id in ids_train_batch.values:
-                    img = imread(os.path.expanduser(
-                        '~/图片/cavaran/train_hq/{}.jpg'.format(_id)))
+                    img = imread('../cavaranset/train_hq/{}.jpg'.format(_id))
 
                     img = resize(img, (self.config.image_width, self.config.image_height), interpolation=INTER_AREA)
 
-                    mask = imread(os.path.expanduser(
-                        '~/图片/cavaran/train_masks/{}_mask.png'.format(_id)),
+                    mask = imread('../cavaranset/train_masks/{}_mask.png'.format(_id),
                         IMREAD_GRAYSCALE)
                     mask = resize(mask, (self.config.image_width, self.config.image_height), interpolation=INTER_AREA)
                     mask = np.expand_dims(mask, axis=-1)
@@ -69,12 +67,10 @@ class CarvanaDataset(DataSet):
                 ids_train_batch = df.iloc[start:end]
 
                 for _id in ids_train_batch.values:
-                    img = imread(os.path.expanduser(
-                        '~/图片/cavaran/train_hq/{}.jpg'.format(_id)))
+                    img = imread('../cavaranset/train_hq/{}.jpg'.format(_id))
                     img = resize(img, (self.config.image_width, self.config.image_height), interpolation=INTER_AREA)
 
-                    mask = imread(os.path.expanduser(
-                        '~/图片/cavaran/train_masks/{}_mask.png'.format(_id)),
+                    mask = imread('../cavaranset/train_masks/{}_mask.png'.format(_id),
                         IMREAD_GRAYSCALE)
                     mask = resize(mask, (self.config.image_width, self.config.image_height), interpolation=INTER_AREA)
                     mask = np.expand_dims(mask, axis=-1)
@@ -91,8 +87,7 @@ class CarvanaDataset(DataSet):
     def predict_generate(self, path=None):
         for id in self.ids_test:
             self.names.append('{}.jpg'.format(id))
-            img = imread(os.path.expanduser(
-                '~/图片/cavaran/test_hq/{}.jpg'.format(id)))
+            img = imread('../cavaranset/test_hq/{}.jpg'.format(id))
             img = resize(img, (self.config.image_width, self.config.image_height), interpolation=INTER_AREA)
             img = img / 255.0
             img = np.expand_dims(img, axis=0)
@@ -104,8 +99,7 @@ class CarvanaDataset(DataSet):
             mask[mask > 0.5] = 1
             mask[mask != 1] = 0
             mask = np.stack([mask, mask, mask], axis=-1)
-            img = imread(os.path.expanduser(
-                '~/图片/cavaran/test_hq/{}'.format(self.df_test['img'][i])))
+            img = imread('../cavaranset/test_hq/{}'.format(self.df_test['img'][i]))
             save_img = np.multiply(mask, img)
             if not os.path.exists(self.save_path):
                 os.makedirs(self.save_path)
