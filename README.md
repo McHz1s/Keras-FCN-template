@@ -6,7 +6,7 @@ A FCN template(container) to quickly train/predict a specific FCN from a dataset
 
 ## Director tree
 
-Architecture inspired by <https://github.com/matterport/Mask_RCNN.>
+Architecture inspired by <https://github.com/matterport/Mask_RCNN>.
 
 ```None
 ├── Apply
