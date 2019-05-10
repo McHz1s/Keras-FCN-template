@@ -51,6 +51,6 @@ Python 3.5, TensorFlow 1.4.0, Keras 2.1.6 and other common packages listed in my
 
 1. Install required package Requirements.
 2. Download dataset from kaggle and set the director(as Carvanadataset)
-3. Copy your FCN.py to Apply/taskname.
+3. Copy your FCN.py to Apply/Carvana and import it as network in Carvanaconfig.py.
 4. Run Apply/task/train.py.
 5. Run Apply/Carvana/predict.py.
