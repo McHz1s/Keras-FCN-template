@@ -54,3 +54,6 @@ Python 3.5, TensorFlow 1.4.0, Keras 2.1.6 and other common packages listed in my
 3. Copy your FCN.py to Apply/Carvana and import it as network in Carvanaconfig.py.(Optional)
 4. Run Apply/Carvana/train.py.
 5. Run Apply/Carvana/predict.py.
+
+One of the results:
+![result](https://github.com/MchZys/Keras-FCN-template/blob/master/Apply/Carvana/sample/0004d4463b50_03.jpg)
