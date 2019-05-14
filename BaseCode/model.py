@@ -124,7 +124,7 @@ class FCNModel():
         if model_path:
             # Continue from we left of. Get epoch and date from the file name
             # A sample model path might look like:
-            # /path/to/logs/coco20171029T2315/mask_rcnn_coco_0001.h5
+            # /Model/mobilenetv2_unet/logs/Carvana20190514T1741/mobilenetv2_unet_0001.h5
             regex = r".*/\w+(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})/NETWORKNAME\w+(\d{4})\.h5"
             regex.replace("NETWORKNAME", self.config.name)
             m = re.match(regex, model_path)
