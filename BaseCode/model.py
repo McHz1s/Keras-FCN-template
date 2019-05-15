@@ -100,7 +100,7 @@ class FCNModel():
         # Inputs
         input_image = Input(shape=self.config.image_shape.tolist(), name="input_image")
         # Outputs
-        output_masks = self.network(input_image, self.config.class_num)
+        output_masks = self.network(input_image, self.config.class_num, **self.config.kwarg)
         # Build model
         inputs = [input_image]
         outputs = [output_masks]
@@ -148,7 +148,7 @@ class FCNModel():
         """
         from keras.utils.data_utils import get_file
 
-        weights_path = get_file(self.config.pre_trained_moedl_name,
+        weights_path = get_file(self.config.pre_trained_model_name,
                                 self.config.pre_trained_model_web_dir,
                                 cache_subdir='models')
         return weights_path

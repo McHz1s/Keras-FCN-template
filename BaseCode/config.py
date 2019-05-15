@@ -28,7 +28,8 @@ class Config(object):
             [self.image_height, self.image_width, 3])
         self.MASK_SHAPE = np.array(
             [self.image_height, self.image_width, 1])
-
+    # Model parameters
+    kwarg = {}
     # ModelName part
     name = 'resnet50'
     task_name = 'MyTask'
@@ -45,7 +46,7 @@ class Config(object):
 
     # Train part
     model_pre_trained = False
-    epoch = 1
+    epoch = 100
     verbose = 1
     # Compile part
     optimizer = 'ADAM'

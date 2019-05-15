@@ -1,6 +1,7 @@
 # Network import
 # import your FCN as "network"
-from mobilenetv2_unet import mobilenet_v2_unet as network
+# from mobilenetv2_unet import mobilenet_v2_unet as network
+from deeplabv3Plus import Deeplabv3 as network
 # Base code import
 import sys
 from os.path import abspath
@@ -14,14 +15,18 @@ from sklearn.model_selection import train_test_split
 
 class CarvanaConfig(Config):
     task_name = 'Carvana'
-    name = 'mobilenet_v2_unet'
-    alpha = 1.0
-    pre_trained_moedl_name = 'mobilenet_v2_weights_tf_dim_ordering_tf_kernels_' \
-                             + str(alpha) + '_224_no_top' + '.h5'
+    # name = 'mobilenet_v2_unet'
+    # alpha = 1.0
+    # pre_trained_moedl_name = 'mobilenet_v2_weights_tf_dim_ordering_tf_kernels_' \
+    #                          + str(alpha) + '_224_no_top' + '.h5'
+    pre_trained_model_name = 'deeplabv3_xception_tf_dim_ordering_tf_kernels.h5'
+    name = 'deeplabv3plus'
+    # model parameters
+
     # Input part
     image_per_gpu = 2
-    image_height = 1024
-    image_width = 1024
+    image_height = 512
+    image_width = 512
     origin_width = 1918
     origin_height = 1280
     # Output part
@@ -36,5 +41,5 @@ class CarvanaConfig(Config):
 
     # Direct part
     pre_trained_model_web_dir = 'https://github.com/JonathanCMitchell/mobilenet_v2_keras/releases' \
-                                + pre_trained_moedl_name
+                                + pre_trained_model_name
     root_dir = '../../../'

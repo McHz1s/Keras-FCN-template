@@ -5,7 +5,7 @@ Reference: https://github.com/JonathanCMitchell/mobilenet_v2_keras
 from keras.layers import Activation
 from keras.layers import BatchNormalization
 from keras.layers import Conv2D
-from keras.applications.mobilenet import DepthwiseConv2D,relu6
+from keras.applications.mobilenet import DepthwiseConv2D, relu6
 from keras.layers import UpSampling2D
 from keras.layers import Add
 from keras.layers import Concatenate
