@@ -1,6 +1,7 @@
 """
 MobileNetV2-UNet
 Reference: https://github.com/JonathanCMitchell/mobilenet_v2_keras
+Change some detail to fit my Keras and tensorflow version.
 """
 from keras.layers import Activation
 from keras.layers import BatchNormalization

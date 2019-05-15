@@ -1,20 +1,7 @@
-# -*- coding: utf-8 -*-
-
-""" Deeplabv3+ model for Keras.
-This model is based on TF repo:
-https://github.com/tensorflow/models/tree/master/research/deeplab
-On Pascal VOC, original model gets to 84.56% mIOU
-
-MobileNetv2 backbone is based on this repo:
-https://github.com/JonathanCMitchell/mobilenet_v2_keras
-
-# Reference
-- [Encoder-Decoder with Atrous Separable Convolution
-    for Semantic Image Segmentation](https://arxiv.org/pdf/1802.02611.pdf)
-- [Xception: Deep Learning with Depthwise Separable Convolutions]
-    (https://arxiv.org/abs/1610.02357)
-- [Inverted Residuals and Linear Bottlenecks: Mobile Networks for
-    Classification, Detection and Segmentation](https://arxiv.org/abs/1801.04381)
+"""
+Deeplabv3+
+Reference: https://github.com/bonlime/keras-deeplab-v3-plus
+Change some detail to fit my Keras and tensorflow version.
 """
 import numpy as np
 import tensorflow as tf
