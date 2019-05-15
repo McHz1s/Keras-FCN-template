@@ -14,7 +14,8 @@ Architecture inspired by <https://github.com/matterport/Mask_RCNN>.
 │       ├── code
 │       │   ├── CarvanaConfig.py
 │       │   ├── CarvanaDataset.py
-│       │   ├── mobilenetv2_unet.py
+│       │   ├── Deeplabv3Plus.py
+│       │   ├── mobilenetv2_unet.py
 │       │   ├── prediciton.py
 │       │   └── train.py
 │       └── sample
@@ -37,8 +38,9 @@ Architecture inspired by <https://github.com/matterport/Mask_RCNN>.
 In this part, we provide Carvana Image Masking Challenge(<https://www.kaggle.com/c/carvana-image-masking-challenge)>
  as a sample.
 
-* mobilenetv2_unet: FCN we adopted(<https://github.com/JonathanCMitchell/mobilenet_v2_keras)>
-* CarvanaConfig.py: write a class CarvanaConfig extends class config from Config.py to set hyperparameter fitting our task. And import mobilenetv2_unet as our network.
+* mobilenetv2_unet.py: Optional FCN(<https://github.com/JonathanCMitchell/mobilenet_v2_keras)>
+* Deeplabv3Plus.py: Optional FCN(<https://github.com/bonlime/keras-deeplab-v3-plus)>
+* CarvanaConfig.py: write a class CarvanaConfig extends class config from Config.py to set hyperparameter fitting our task. And import mobilenetv2_unet(or Deeplabv3plus) as our network.
 * CarvanaDataset.py: write a class CarvanaDataset extends class dataset from dataset.py to generate data for our model.
 * prediciton.py: run model.predict and get the result.
 * train.py: run model.train and get the trained network.
