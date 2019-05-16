@@ -40,10 +40,10 @@ In this part, we provide Carvana Image Masking Challenge(<https://www.kaggle.com
 
 * mobilenetv2_unet.py: Optional FCN(<https://github.com/JonathanCMitchell/mobilenet_v2_keras)>
 * Deeplabv3Plus.py: Optional FCN(<https://github.com/bonlime/keras-deeplab-v3-plus)>
-* CarvanaConfig.py: write a class CarvanaConfig extends class config from Config.py to set hyperparameter fitting our task. And import mobilenetv2_unet(or Deeplabv3plus) as our network.
-* CarvanaDataset.py: write a class CarvanaDataset extends class dataset from dataset.py to generate data for our model.
-* prediciton.py: run model.predict and get the result.
-* train.py: run model.train and get the trained network.
+* CarvanaConfig.py: Write a class CarvanaConfig extends class config from Config.py to set hyperparameter fitting our task. And import mobilenetv2_unet(or Deeplabv3plus) as our network.
+* CarvanaDataset.py: Write a class CarvanaDataset extends class dataset from dataset.py to generate data for our model.
+* prediciton.py: Run model.predict and get the result.
+* train.py: Run model.train and get the trained network.
 
 # Requirements
 
