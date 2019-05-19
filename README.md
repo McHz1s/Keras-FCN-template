@@ -1,6 +1,6 @@
 # Keras-FCN-template
 
-A FCN template(container) to quickly train/predict a specific FCN from a dataset.
+A FCN template(container) to quickly train/predict a FCN for a specific semantic segmention task.
 
 # File introdutction
 
